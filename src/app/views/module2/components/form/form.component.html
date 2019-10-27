@@ -1,0 +1,9 @@
+<div class="border rounded p-3">
+  <form [formGroup]="pageForm" (ngSubmit)="submit()">
+    <label>Número de página:</label>
+    <div class="d-flex">
+      <input class="form-control" type="number" formControlName="pageNumber" min="1">
+      <button class="btn btn-success ml-1" type="submit" [disabled]="!pageForm.valid">Enviar</button>
+    </div>
+  </form>
+</div>

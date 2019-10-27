@@ -1,0 +1,8 @@
+<carousel [itemsPerSlide]="3" [singleSlideOffset]="false" [noWrap]="false" [interval]="false">
+  <slide class="mx-3" *ngFor="let item of items" style="cursor: pointer" (click)="itemClicked(item)">
+    <img [src]="item.avatar" alt="image slide" class="w-100 d-block">
+    <div class="carousel-caption">
+      <p>Slide</p>
+    </div>
+  </slide>
+</carousel>

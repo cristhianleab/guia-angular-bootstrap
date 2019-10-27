@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header text-center h5">
+    <b>Módulo 2</b>: Lista de Usuarios
+    <br>
+    <small>(Consumo de servicio REST y comunicación entre componente padre y componente hijo)</small>
+  </div>
+
+  <div class="card-body">
+    <app-form (emitter)="searchUsers($event)"></app-form>
+
+    <div *ngIf="users" class="border rounded mx-auto mt-3 p-3">
+      <div class="row justify-content-center">
+        <div class="col-12 h5 mb-2 text-center">
+          <b>Email: {{user.email}}</b>
+        </div>
+
+        <div class="col-12 mb-2 text-center my-5">
+          <img class="mw-100" alt="Avatar de usuario" src="{{user.avatar}}">
+        </div>
+
+        <div class="col-12 col-md-8 d-flex flex-column text-center">
+          <small>Nombre: <b>{{user.first_name}}</b></small>
+          <small>Apellido: <b>{{user.last_name}}</b></small>
+        </div>
+      </div>
+
+      <app-carousel [items]="users" (emitter)="user = $event"></app-carousel>
+    </div>
+
+  </div>
+</div>
+
+<app-footer></app-footer>

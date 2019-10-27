@@ -1,0 +1,22 @@
+<h5 class="font-weigth-light text-center">{{chat | titlecase}}</h5>
+
+<div class="chatBox mb-1">
+  <div class="row p-1">
+    <div class="col-10 mb-1 text-light rounded d-flex flex-column" *ngFor="let message of messages" [ngClass]="{
+      'bg-secondary': message.chat == chat,
+      'ml-auto': message.chat == chat,
+      'bg-success': message.chat != chat}">
+
+      <p [class.ml-auto]="message.chat != chat">{{message.message}}</p>
+
+      <small [class.ml-auto]="message.chat == chat">
+        {{message.time | date: 'short':'UTC'}}
+      </small>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex">
+  <input [(ngModel)]="message" class="form-control" type="text" placeholder="Mensaje...">
+  <button class="btn btn-success ml-1" (click)="sendMessage()" [disabled]="!message">Enviar</button>
+</div>

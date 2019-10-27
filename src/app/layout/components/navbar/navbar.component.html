@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 border">
+  <a class="navbar-brand" routerLink="/home" routerLinkActive="text-success"><b>My</b> App!</a>
+
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse ml-3 ml-md-5" id="navbarNav" [collapse]="isCollapsed" [isAnimated]="true">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/modulo1" routerLinkActive="text-success">Módulo 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/modulo2" routerLinkActive="text-success">Módulo 2</a>
+      </li>
+    </ul>
+  </div>
+</nav>
